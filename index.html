@@ -209,8 +209,26 @@
       <div class="footer__bar">
         Copyright © 2024 Beach Lookup. All rights reserved.
       </div>
+     <!-- Floating AI Assistant (place once, before </body>) -->
+<div id="ai-assistant">
+  <button id="ai-btn"><i class="ri-robot-2-line"></i> Ask BLU AI</button>
+
+  <div id="ai-box" class="hidden" role="dialog" aria-label="BLU AI chat">
+    <div id="ai-messages" aria-live="polite"></div>
+
+    <div id="ai-input-row">
+      <input type="text" id="ai-input" placeholder="Ask about a beach (e.g. Goa, Miami, Bondi)" />
+      <button id="ai-send" aria-label="Send">Send</button>
+    </div>
+  </div>
+</div>
+
+
+
     </footer>
 
     <script src="script.js"></script>
+
+
   </body>
 </html>

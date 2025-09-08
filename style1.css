@@ -42,6 +42,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* ---------------- NAV ---------------- */
 nav {
   max-width: var(--max-width);
   margin: auto;
@@ -74,6 +75,7 @@ nav {
   color: var(--primary-color);
 }
 
+/* ---------------- HEADER ---------------- */
 .header__container {
   padding: 1rem 1rem 5rem 1rem;
 }
@@ -110,6 +112,7 @@ nav {
   color: var(--extra-light);
 }
 
+/* ---------------- BOOKING ---------------- */
 .booking__container {
   position: absolute;
   bottom: -5rem;
@@ -190,6 +193,7 @@ nav {
   background-color: var(--primary-color-dark);
 }
 
+/* ---------------- POPULAR ---------------- */
 .popular__grid {
   margin-top: 4rem;
   display: grid;
@@ -201,6 +205,12 @@ nav {
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.popular__card:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 
 .popular__content {
@@ -211,7 +221,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -225,6 +234,7 @@ nav {
   color: var(--text-light);
 }
 
+/* ---------------- CLIENT ---------------- */
 .client {
   background-color: var(--extra-light);
 }
@@ -255,6 +265,7 @@ nav {
   color: var(--text-dark);
 }
 
+/* ---------------- REWARD ---------------- */
 .reward__container {
   padding: 2rem;
   text-align: center;
@@ -293,6 +304,7 @@ nav {
   background-color: var(--primary-color-dark);
 }
 
+/* ---------------- FOOTER ---------------- */
 .footer {
   background-color: var(--extra-light);
 }
@@ -303,18 +315,19 @@ nav {
   gap: 5rem;
 }
 
-.footer__col h3 {
+.footer__col h3,
+.footer__col h4 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-dark);
 }
 
+.footer__col h3 {
+  font-size: 1.5rem;
+}
+
 .footer__col h4 {
-  margin-bottom: 1rem;
   font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-dark);
 }
 
 .footer__col p {
@@ -329,7 +342,6 @@ nav {
 }
 
 .footer__bar {
-  position: relative;
   max-width: var(--max-width);
   margin: auto;
   padding: 1rem;
@@ -337,6 +349,7 @@ nav {
   font-weight: 500;
   color: var(--text-light);
   text-align: right;
+  position: relative;
   overflow: hidden;
 }
 
@@ -351,21 +364,16 @@ nav {
   background-color: var(--text-light);
 }
 
+/* ---------------- RESPONSIVE ---------------- */
 @media (width < 900px) {
   .booking__container form {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .popular__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
+  .popular__grid,
   .client__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -375,58 +383,27 @@ nav {
   .nav__links {
     display: none;
   }
-
   .header__container {
     padding-bottom: 25rem;
   }
-
   .booking__container {
     flex-direction: column;
     bottom: -25rem;
   }
-
   .booking__container form {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
-
-  .popular__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
+  .popular__grid,
   .client__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
-
   .footer__container {
     gap: 2rem;
   }
 }
 
-.popular__card:hover{
-  scale: 1.05;
-  pointer-events: stroke;
-  cursor: pointer;
-}
-
-.popular__card{
-  transition: all 0.2s;
-}
-
-#login-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#login-btn:hover {
-  background-color: var(--primary-color-dark);
-}
+/* ---------------- BUTTONS ---------------- */
+#login-btn,
 #sign-btn {
   padding: 0.5rem 1rem;
   border: none;
@@ -439,6 +416,206 @@ nav {
   transition: 0.3s;
 }
 
+#login-btn:hover,
 #sign-btn:hover {
   background-color: var(--primary-color-dark);
 }
+
+/* ---------------- AI ASSISTANT ---------------- */
+/* AI Assistant Floating Container */
+#ai-assistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: "Poppins", sans-serif;
+  z-index: 9999;
+}
+
+/* Floating Button (default state) */
+#ai-btn {
+  background: linear-gradient(135deg, #0077b6, #0096c7);
+  color: #fff;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect - expands button a bit */
+#ai-btn:hover {
+  background: linear-gradient(135deg, #0096c7, #00b4d8);
+  transform: scale(1.08);
+  padding: 14px 22px; /* expand on hover */
+}
+
+/* Chatbox (hidden by default) */
+#ai-box {
+  margin-top: 12px;
+  background: #ffffff;
+  width: 320px;
+  max-height: 420px;
+  border-radius: 15px;
+  padding: 12px;
+  display: none;  /* hidden until clicked */
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Messages Area */
+#ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Input Row (only visible when box is open) */
+#ai-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  flex: 1;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#ai-send {
+  background: #0096c7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#ai-send:hover {
+  background: #0077b6;
+}
+
+/* User and AI messages */
+.user-msg, .ai-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ai-msg {
+  background: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* AI Assistant UI */
+#ai-assistant { position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: "Poppins", sans-serif; }
+
+/* button */
+#ai-btn {
+  background: linear-gradient(135deg,#0077b6,#0096c7);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: transform .18s ease, padding .18s ease;
+}
+#ai-btn:hover { transform: scale(1.06); }
+
+/* full chat box (default visible style) */
+#ai-box { 
+  width: 340px;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* hidden helper class (use to hide) */
+.hidden { display: none !important; }
+
+#ai-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  overflow-y: auto;
+  max-height: 260px;
+}
+
+/* input row */
+#ai-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+#ai-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  font-size: 14px;
+}
+#ai-send {
+  background: #0096c7;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* bubbles */
+.user-msg, .ai-msg {
+  max-width: 82%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+.user-msg { background: #007bff; color: #fff; align-self: flex-end; text-align: right; }
+.ai-msg   { background: #f3f4f6; color: #111; align-self: flex-start; text-align: left; }
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  #ai-box { width: 92vw; right: 4vw; left: 4vw; }
+}
+
